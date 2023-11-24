@@ -7,8 +7,8 @@ import {
   Navigate,
 } from 'react-router-dom';
 
+import { ShoppingPage } from '../02-component-pattern/pages/ShoppingPage.tsx';
 import logo from '../assets/react.svg';
-import { routes } from './routes';
 
 export const Navigation = () => {
   const handleIsActive = ({ isActive }: { isActive: boolean }): string =>
@@ -21,21 +21,29 @@ export const Navigation = () => {
           <nav>
             <img src={logo} alt='React Logo' />
             <ul>
-              {routes.map(({ to, name }) => (
-                <li key={to}>
-                  <NavLink to={to} className={handleIsActive}>
-                    {name}
-                  </NavLink>
-                </li>
-              ))}
+              <li>
+                <NavLink to='/' className={handleIsActive}>
+                  Shopping
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to='/about' className={handleIsActive}>
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to='/users' className={handleIsActive}>
+                  Users
+                </NavLink>
+              </li>
             </ul>
           </nav>
 
           <Routes>
-            {routes.map(({ path, Component }) => (
-              <Route key={path} path={path} element={<Component />} />
-            ))}
-            <Route path='/*' element={<Navigate to={routes[0].to} replace />} />
+            <Route path='/about' element={<h1>About</h1>} />
+            <Route path='/users' element={<h1>Users</h1>} />
+            <Route path='/' element={<ShoppingPage />} />
+            <Route path='/*' element={<Navigate to='/' replace />} />
           </Routes>
         </div>
       </BrowserRouter>
