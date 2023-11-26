@@ -3,7 +3,7 @@ import {
   ProductCardButtons,
   ProductCardImage,
   ProductCardTitle,
-} from '../Components/ProductCard';
+} from '../Components';
 
 const prodcut = {
   id: '1',
