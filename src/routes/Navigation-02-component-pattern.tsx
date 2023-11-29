@@ -7,7 +7,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import { ShoppingPage } from '../03-extensible-style/pages/ShoppingPage';
+import { ShoppingPage } from '../02-component-pattern/pages/ShoppingPage.tsx';
 import logo from '../assets/react.svg';
 
 export const Navigation = () => {
@@ -23,7 +23,7 @@ export const Navigation = () => {
             <ul>
               <li>
                 <NavLink to='/' className={handleIsActive}>
-                  Shopping style
+                  Shopping
                 </NavLink>
               </li>
               <li>
