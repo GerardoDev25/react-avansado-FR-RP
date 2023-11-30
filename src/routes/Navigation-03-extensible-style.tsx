@@ -7,7 +7,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import { ShoppingPage } from '../04-control-props/pages/ShoppingPage';
+import { ShoppingPage } from '../03-extensible-style/pages/ShoppingPage';
 import logo from '../assets/react.svg';
 
 export const Navigation = () => {
